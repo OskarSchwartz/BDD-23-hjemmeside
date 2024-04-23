@@ -1,0 +1,94 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aarhus universitets ladestander</title>
+</head>
+<body>
+
+    <style>
+
+        body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    flex-direction: column;
+                    text-align: center;
+                }
+        
+        </style>
+
+<p>4 Kører du frem og tilbage mellem dine frihedsaktiviteter?</p>
+
+<label for="Ja">Ja</label> 
+
+<input type="checkbox" id="Ja" onclick="VisTekstJa()">
+
+<label for="nej">Nej</label>
+
+<input type="checkbox" id="nej" onclick="Nej()">
+
+<p id="tekst" style="display:none">Der er sikkert muligheder for at lade ved lokationen af dine fritidsaktiviteter. Har du overvejet at lade ved fritidsaktiviteterne i stedet? </p>
+
+<label for="JegØnskerAtLadeHer" id="CheckBoxJegØnskerAtLadeHerLabel"style="display:none">Jeg ønsker at lade her</label>
+
+<input type="checkbox" id="JegØnskerAtLadeHer" style="display:none" onclick="VisTekstØnskerAtLade()">
+
+<input type="submit" value="Næste" id="NæsteKnap" style="display:none" onclick="NæsteKnap()">
+
+<input type="submit" value="Tilbage" id="NæsteKnap" onclick="TilbageKnap()">
+
+<script>
+
+var tekst = document.getElementById("tekst")
+var CheckBoxJa = document.getElementById("Ja")
+CheckBoxJegØnskerAtLadeHerLabel = document.getElementById("CheckBoxJegØnskerAtLadeHerLabel")
+var CheckBoxJegØnskerAtLadeHer = document.getElementById("JegØnskerAtLadeHer")
+var næste = document.getElementById("NæsteKnap")
+
+var nej = document.getElementById("nej");
+
+
+function VisTekstJa() {
+
+    if (CheckBoxJa.checked == true){
+        tekst.style.display = "block";
+        CheckBoxJegØnskerAtLadeHer.style.display = "block";
+        CheckBoxJegØnskerAtLadeHerLabel.style.display = "block"
+    } else {
+        tekst.style.display = "none";
+        CheckBoxJegØnskerAtLadeHer.style.display = "none";
+        CheckBoxJegØnskerAtLadeHerLabel.style.display = "none"
+    }
+}
+
+function Nej() {
+        if (nej.checked == true) {
+            næste.style.display = "block";
+        } else {
+        næste.style.display = "none";
+    }
+    }
+
+function VisTekstØnskerAtLade() {
+        if (CheckBoxJegØnskerAtLadeHer.checked == true) {
+            næste.style.display = "block";
+        } else {
+        næste.style.display = "none";
+    }
+
+    }
+
+    function NæsteKnap() {
+        window.location.href = 'side5.html';
+    }    
+
+    function TilbageKnap() {
+        window.location.href = "side3.html";
+    }
+
+
+</script>
+
+</body>
+</html>

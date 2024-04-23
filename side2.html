@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aarhus universitets ladestander</title>
+</head>
+
+<style>
+
+body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            height: 100vh;
+            flex-direction: column;
+            text-align: center;
+        }
+
+</style>
+
+<body>
+   
+    <a>2 Har du en cykel?</a>
+
+    <br>
+
+    <br>
+
+    <label for="Ja">Ja</label> 
+    
+    <input type="checkbox" id="Ja" onclick="VisTekstJa()">
+
+    <label for="nej">Nej</label>
+
+    <input type="checkbox" id="nej" onclick="Nej()">
+
+    <br>
+
+    <br>
+
+<p id="text" style="display:none">På Aarhus universitet bakker vi op om alternative transportformer, derfor ser vi gerne at du cykler i stedet</p>
+
+<label for="lade" id="LadeLabel" style="display:none">Ønsker at lade</label>
+
+    <input type="checkbox" id="lade" style="display:none" onclick="VisTekstØnskerAtLade()">
+
+    <input type="submit" value="Næste" id="NæsteKnap" style="display:none" onclick="NæsteKnap()">
+
+    <input type="submit" value="Tilbage" id="NæsteKnap" onclick="TilbageKnap()">
+
+    <script>
+
+    var checkBox = document.getElementById("Ja");
+    var text = document.getElementById("text");
+    var ladelabel = document.getElementById("LadeLabel");
+    var næste = document.getElementById("NæsteKnap");
+    var ladecheckbox = document.getElementById("lade");
+    var nej = document.getElementById("nej");
+
+    function VisTekstJa() {
+
+    if (checkBox.checked == true){
+        text.style.display = "block";
+        ladelabel.style.display = "block";
+        lade.style.display = "block";
+    } else {
+        text.style.display = "none";
+    }
+    }
+
+    function Nej() {
+        if (nej.checked == true) {
+            næste.style.display = "block";
+        } else {
+        næste.style.display = "none";
+    }
+    }
+
+    function VisTekstØnskerAtLade() {
+        if (ladecheckbox.checked == true) {
+            næste.style.display = "block";
+        }
+
+    }
+
+    function NæsteKnap() {
+        window.location.href = 'side3.html';
+    }    
+
+    function TilbageKnap() {
+        window.location.href = "test.html";
+    }
+    
+
+    </script>    
+
+</body>
+</html>
+

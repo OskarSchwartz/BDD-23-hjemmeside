@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>Aarhus universitets ladestander</title>
+</head>
+<body>
+
+    <style>
+
+        body {
+                    display: flex;
+                    justify-content: center;
+                    align-items: center;
+                    height: 100vh;
+                    flex-direction: column;
+                    text-align: center;
+                }
+        
+        </style>
+
+<a>3 Bruger du din bil når du skal ud og handle?</a>
+
+<br>
+
+
+<br>
+
+<label for="Ja">Ja</label> 
+
+<input type="checkbox" id="Ja" onclick="VisTekstJa()">
+
+<label for="nej">Nej</label>
+
+<input type="checkbox" id="nej" onclick="Nej()">
+
+<p id="text" style="display:none">Det er smart at lade der hvor du alligevel handler. Vi opfordrer til at ladningen foregår der.</p>
+
+<label id="JegØnskerAtLadeHerLabel" for="JegØnskerAtLadeHer" style="display:none"> Jeg ønsker at lade her</label>
+
+<input type="checkbox" id="JegØnskerAtLadeHer" style="display:none" onclick="VisTekstØnskerAtLade()">
+
+<input type="submit" value="Næste" id="NæsteKnap" style="display:none" onclick="NæsteKnap()">
+
+<input type="submit" value="Tilbage" id="NæsteKnap" onclick="TilbageKnap()">
+
+<script>
+
+var checkBoxJa = document.getElementById("Ja");
+
+var text = document.getElementById("text");
+
+var JegØnskerAtLadeHerCheckBox = document.getElementById("JegØnskerAtLadeHer")
+
+var JegØnskerAtLadeHerLabel = document.getElementById("JegØnskerAtLadeHerLabel")
+
+var næste = document.getElementById("NæsteKnap")
+
+var nej = document.getElementById("nej");
+
+    function VisTekstJa() {
+
+        if (checkBoxJa.checked == true){
+            text.style.display = "block";
+            JegØnskerAtLadeHerCheckBox.style.display = "block";
+            JegØnskerAtLadeHerLabel.style.display = "block";
+        } else {
+            text.style.display = "none";
+            JegØnskerAtLadeHerLabel.style.display = "none";
+        }
+    }
+
+    function Nej() {
+        if (nej.checked == true) {
+            næste.style.display = "block";
+        } else {
+        næste.style.display = "none";
+    }
+    }
+
+    function VisTekstØnskerAtLade() {
+            if (JegØnskerAtLadeHerCheckBox.checked == true) {
+                næste.style.display = "block";
+            } else {
+            næste.style.display = "none";
+        }
+
+        }
+
+    function NæsteKnap() {
+            window.location.href = 'side4.html';
+        }    
+
+    function TilbageKnap() {
+        window.location.href = "side2.html";
+    }
+
+</script>
+
+</body>
+</html>
